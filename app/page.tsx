@@ -1,6 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
+import Link from "next/link";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 import { FormEvent, useRef, useState } from "react";
 import { Loader } from "~/src/components/Loader";
@@ -79,10 +80,13 @@ export default function Home() {
 
     return (
         <main className="m-auto max-w-xl flex flex-col px-2 py-8 h-full">
-            <h1 className="text-3xl md:text-5xl text-center z-10 mb-4 flex flex-col">
+          <Link href="https://www.yodev.fr/">
+          <h1 className="text-3xl md:text-5xl text-center z-10 mb-4 flex flex-col">
                 <span style={{ color: "#f8c73d" }}>Askinator</span>
                 <span style={{ color: "#f8c73d"}}>GPT</span>
             </h1>
+          </Link>
+            
             <div className="flex-1 flex flex-col gap-4 overflow-auto">
                 <ul ref={ref} className="flex flex-col flex-1">
                     {messages.map((message, i) => (
